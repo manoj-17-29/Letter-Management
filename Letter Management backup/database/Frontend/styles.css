@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap');
+
+
+body {
+    font-family: Poppins;
+}
+
+
+.div_box {
+    box-sizing: border-box;
+    width: 320px;
+    height: 320px;
+    background-color: rgb(195, 195, 195);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition:0.3s all;
+}
+
+.div_box:hover {
+    width: 330px;
+    height: 330px;
+    background-color: rgb(178, 178, 178);
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+   
+.footer {
+    background-color: rgb(21, 20, 20);
+    font-family: Poppins !important;
+  }
+  
+  .foot1 {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .foot3 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .foot2 {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  
+  .footer-col h3 {
+    color: white;
+    padding-left: 30px;
+    padding-right: 90px;
+    margin-top: 30px;
+    position: relative;
+  }
+  
+  .footer-col h3::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    background-color: rgb(243, 1, 207);
+    height: 2px;
+    box-sizing: border-box;
+    width: 70px;
+  
+  }
+  
+  .footer-col ul li a {
+    color: rgb(210, 206, 206);
+    display: block;
+    transition: all 0.3s ease;
+  }
+  
+  .footer-col ul li a:hover {
+    color: rgb(243, 1, 207);
+    padding-left: 15px;
+  }
+  
+  .icon {
+    padding-right: 20px;
+    padding-left: 20px;
+    font-size: 220%;
+    color: white;
+    transition: all 0.5s ease;
+  }
+  
+  .icon:hover {
+    color: rgb(243, 1, 207);
+  }
+  
+  .social {
+    margin-top: 45px;
+    padding-left: 10px;
+  }
+  
+  
+  .footer_word {
+    font-family: Poppins;
+    font-size: 100%;
+  }
+  
+  #insta:hover {
+    color: rgb(243, 1, 207);
+  }
+  
+  #twitter:hover {
+    color: rgb(29, 155, 240);
+  }
+  
+  #facebook:hover {
+    color: rgb(9, 119, 224);
+  }
+  
+  #linkedin:hover {
+    color: rgb(0, 119, 181);
+  }
+  
+
+  
+  .login-box {
+border-radius: 20px;
+    width: 300px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(29, 29, 29);
+  }
+
+  .login-box .user-box {
+    position: relative;
+  }
+
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+  }
+
+  .login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+  }
+
+  .login-box .user-box input:focus~label,
+  .login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #bdb8b8;
+    font-size: 12px;
+  }
+
+  .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #04b4ff;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+
+  .login-box a:hover {
+    background: #04b4ff;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #04b4ff,
+      0 0 25px #04b4ff,
+      0 0 50px #04b4ff,
+      0 0 100px #04b4ff;
+  }
+
+  .login-box a span {
+    position: absolute;
+    display: block;
+  }
+
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+
+    50%,
+    100% {
+      left: 100%;
+    }
+  }
+
+  .login-box a span:nth-child(1) {
+    bottom: 2px;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #04b4ff);
+    animation: btn-anim1 2s linear infinite;
+  }
+
+  .log-head {
+    color: #04b4ff;
+    font-size: xx-large;
+    font-weight: bold;
+  }
+
+  .login_word {
+    color: white;
+    cursor: pointer;
+  }

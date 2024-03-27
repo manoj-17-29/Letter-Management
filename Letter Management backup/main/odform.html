@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <link rel="icon" href="frontend/ESEC_Logo.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI & DS Letter Management</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+
+
+  <script src="https://kit.fontawesome.com/b2d405b984.js" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="frontend/style.css">
+  <script src="backend/odscript.js" defer></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-expand-lg  bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand  text-light" href="index.html">
+        <h3><b><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;AI & DS Letters</b></h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarText">
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item ">
+            <a class="nav-link active text-light" href=""><b></b></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link active text-light" href="index.html"><b>Home</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" href="#contact"><b>Contact</b></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-light" href="#follow-us"><b>Social-links</b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="form_page col-12">
+
+    <div class="container mt-5 mb-5 " style="width: fit-content;">
+      <div class="row text-center animate__animated animate__fadeInDown">
+
+
+        <center>
+          <div class="col-12 form shadow-lg p-3">
+
+            <center>
+              <h2 class="text-center event_heading pt-5 pb-5 p-3 col-12 text-primary fs-bolder"
+                style="letter-spacing: 2px;font-weight: 600;">OD Letter
+                Management</h2>
+            </center>
+
+
+            <div class="">
+              <form id="inputForm">
+                <label class="label_heading" for="odname">Name :</label><br>
+                <div class="col-12"><input type="text" id="odname" placeholder="Name" required
+                    class="input-box"><br><br>
+                </div>
+
+                <label class="label_heading" for="odrollno">Roll No :</label><br>
+                <div class="col-12"><input type="text" id="odrollno" placeholder="Roll No" required
+                    class="input-box"><br><br></div>
+
+
+
+
+
+                <label class="label_heading" for="odyear">Year:</label><br>
+                <div class="col-12"><select id="odyear" required class="input-box">
+                    <option>&nbsp;&nbsp; 1 st Year</option>
+                    <option>&nbsp;&nbsp; 2 nd Year</option>
+                    <option>&nbsp;&nbsp; 3 rd Year</option>
+                    <option>&nbsp;&nbsp; 4 th Year</option>
+
+
+                  </select><br><br></div>
+
+
+                <label class="label_heading" for="odsec">Section:</label><br>
+                <div class="col-12"><select id="odsec" required class="input-box">
+                    <option>&nbsp;&nbsp; A &nbsp;</option>
+                    <option>&nbsp;&nbsp; B &nbsp;</option>
+                    <option>&nbsp;&nbsp; C &nbsp;</option>
+                    <option>&nbsp;&nbsp; - &nbsp;</option>
+
+
+                  </select><br><br></div>
+
+
+                <label class="label_heading" for="odleavedays">Total days Absent :</label><br>
+                <div class="col-12"><input type="number" id="odleavedays" placeholder="Total Days" required
+                    class="input-box"><br><br></div>
+
+
+
+                <label class="label_heading" for="odstartingdate">starting date :</label><br>
+                <div class="col-12"><input type="date" id="odstartingdate" placeholder="Total Days" required
+                    class="input-box"><br><br></div>
+
+
+
+
+                <label class="label_heading" for="odendingdate">Ending date :</label><br>
+                <div class="col-12"><input type="date" id="odendingdate" placeholder="Total Days"
+                    class="input-box"><br><br></div>
+
+
+
+                <label class="label_heading" for="odsec">Reason:</label><br>
+                <div class="col-12"><select id="odreason" required class="input-box">
+                    <option>&nbsp;&nbsp; Internship &nbsp;</option>
+                    <option>&nbsp;&nbsp; Paper Presentation &nbsp;</option>
+                    <option>&nbsp;&nbsp; Project Presentation &nbsp;</option>
+                    <option>&nbsp;&nbsp; Hackathon &nbsp;</option>
+                    <option>&nbsp;&nbsp; Conference &nbsp;</option>
+                    <option>&nbsp;&nbsp; Sports &nbsp;</option>
+                    <option>&nbsp;&nbsp; Cultural Events &nbsp;</option>
+                    <option>&nbsp;&nbsp; Others &nbsp;</option>
+
+
+
+                  </select><br><br></div>
+
+
+
+
+                <label class="label_heading" for="odPhotocopy">Photo Copy</label><br>
+                <div class="col-12"><input type="file" id="odPhotocopy" placeholder="Total Days" required
+                    class="input-box"><br><br></div>
+
+
+
+
+
+
+
+                <div class="text-center m-5">
+                  <button class="submit_btn rounded-4 fs-5" id="submit">Submit</button>
+                </div><br>
+              </form>
+            </div>
+          </div>
+        </center>
+      </div>
+    </div>
+
+
+
+    <footer class="footer container-fluid">
+      <div class="row">
+
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="footer-col" id="follow-us">
+            <h3>Follow us</h3>
+            <div class="social">
+              <a class="icon" href="https://www.instagram.com/esecindia/" target="_blank" id="insta"><i
+                  class="fa-brands fa-instagram"></i></a>
+              <a class="icon" href="https://twitter.com/esec_india" target="_blank" id="twitter"><i
+                  class="fa-brands fa-twitter "></i></a>
+              <a class="icon" href="https://www.linkedin.com/school/esecindia" target="_blank" id="linkedin"><i
+                  class="fa-brands fa-linkedin"></i></a>
+              <a class="icon" href="https://www.facebook.com/esecindia" target="_blank" id="facebook"><i
+                  class="fa-brands fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="footer-col">
+            <h3>contact us</h3>
+            <ul
+              style="color: white; padding-left: 65px; padding-bottom: 15px; padding-top: 45px;list-style-type: none;">
+              <li style="padding-top: 20px;"><a
+                  href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=CllgCJZbjsDVzpjDkBxkfngwLpPNqZSpsXdSwFDZTvpkLbVWfBnrdjfWmjnvxpTcqTfDqBlRhqV"
+                  target="_blank" style="text-decoration:none  ;" class="footer_word">hodads@esec.ac.in</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+
+        <div class="col-12 col-md-12 col-lg-4">
+          <div class="footer-col" id="contact">
+            <h3>Telephone</h3>
+            <ul
+              style="color: white; padding-left: 65px; padding-bottom: 15px; padding-top: 45px;list-style-type: none;">
+              <li><a href="tel:+918660632571" style="text-decoration:none  ;" target="_blank" class="footer_word">Ms
+                  R.Savitha AP/AI&DS
+                  <br>(8660632571)</a></li>
+            </ul>
+
+          </div>
+        </div>
+
+
+
+
+        <hr style="width:90% ;color: white; margin: 10px auto; ">
+        <br>
+
+        <div class="col-12 text-center container d-none d-lg-block">
+          <a href="https://erode-sengunthar.ac.in/" target="_blank" style="text-decoration: none;">
+            <h5 style="text-align:center ;color: white;font-size: 120%;">© &nbsp; ESEC
+            </h5>
+          </a>
+          <h6 style="text-align:center ;color: white;font-size: 100%;">Developed by S Manoj B.Tech
+            AI&DS
+          </h6></a>
+        </div>
+
+        <div class="col-12 text-center container d-lg-none">
+          <a href="https://erode-sengunthar.ac.in/" target="_blank" style="text-decoration: none;">
+            <h5 style="text-align:center ;color: white;font-size: 110%;">©&nbsp;ESEC</h5>
+          </a>
+          <h6 style="text-align:center ;color: white;font-size: 100%;">Developed by S Manoj B.Tech
+            AI&DS</h6></a>
+        </div>
+        <br>
+
+      </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
